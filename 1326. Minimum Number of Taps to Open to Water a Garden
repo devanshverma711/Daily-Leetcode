@@ -13,3 +13,10 @@ The tap at point 4 can cover the interval [4,4]
 The tap at point 5 can cover the interval [5,5]
 Opening Only the second tap will water the whole garden [0,5]
 
+Solution -------->
+
+In this first we declare the min and max as 0.
+then we run the while loop till max is greater than n.
+in this applying for loop we check the required condition that is [i - ranges[i], i + ranges[i]] if it is met we change the max to i+ranges[i].
+if after for loop gives min ==max that means no tap can fill the garden.
+otherwise change the min to max and increase the count.
