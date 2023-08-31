@@ -20,3 +20,34 @@ then we run the while loop till max is greater than n.
 in this applying for loop we check the required condition that is [i - ranges[i], i + ranges[i]] if it is met we change the max to i+ranges[i].
 if after for loop gives min ==max that means no tap can fill the garden.
 otherwise change the min to max and increase the count.
+
+Code------------>
+class minTapss{
+    public static void main(String[] args) {
+        int [] ranges = {1,2,1,0,2,1,0,1};
+        int n =7;
+        System.out.println(minTaps(ranges,n));
+    }
+
+    private static int minTaps(int[] ranges, int n) {
+        int min =0;
+        int max =0;
+        int count=0;
+        int lastTap=0;
+
+        while(max<n){
+            for(int i =lastTap;i<=n;i++){
+                if(i-ranges[i]<=min && i+ranges[i]>max){
+                    lastTap=i;
+                    max=i+ranges[i];
+                }
+            }
+            if(min==max){
+                return -1;
+            }
+            min=max;
+            count++;
+        }
+        return count;
+    }
+}
